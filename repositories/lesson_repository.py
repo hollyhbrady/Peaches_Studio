@@ -11,11 +11,11 @@ def save(lesson):
     pass
 
 
-def select_all():
+def select(id):
     pass
 
 
-def select(id):
+def select_all():
     pass
 
 
@@ -25,3 +25,7 @@ def delete(id):
 
 def delete_all():
     pass
+
+
+def members(lesson):
+    pass #FIND ALL MEMBERS BOOKED FOR A LESSON

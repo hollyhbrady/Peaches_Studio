@@ -11,13 +11,17 @@ def save(booking):
     pass
 
 
+def select(id):
+    pass
+
+
 def select_all():
     pass
 
 
-def delete_all():
+def delete(id):
     pass
 
 
-def delete(id):
+def delete_all():
     pass
