@@ -40,7 +40,9 @@ def select_all():
 
 
 def delete(id):
-    pass
+    sql = "DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql)
 
 
 def delete_all():
