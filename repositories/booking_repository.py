@@ -48,3 +48,7 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
+
+
+#
+def lesson(booking):
