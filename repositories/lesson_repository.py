@@ -48,5 +48,14 @@ def delete_all():
     run_sql(sql)
 
 
+#FIND ALL MEMBERS BOOKED FOR A LESSON
 def members(lesson):
-    pass #FIND ALL MEMBERS BOOKED FOR A LESSON
+    members = []
+    sql = "SELECT members.* FROM members INNER JOIN bookings on bookings.member_id = members.id WHERE lesson_id = %s"
+    values = [lesson.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        member = Member(row['name'], row['membership'])
+        members.append(member)
+    return members
