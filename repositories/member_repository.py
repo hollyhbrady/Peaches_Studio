@@ -26,7 +26,14 @@ def select(id):
 
 
 def select_all():
-    pass
+    members = []
+    sql = "SELECT * FROM members"
+    results = run_sql(sql)
+
+    for row in results:
+        member = Member(row['name'], row['membership'], row['id'])
+        members.append(member)
+    return members
 
 
 def delete(id):
