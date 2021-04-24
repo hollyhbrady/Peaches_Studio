@@ -27,7 +27,14 @@ def select(id):
 
 
 def select_all():
-    pass
+    lessons = []
+    sql = "SELECT * FROM lessons"
+    results = run_sql(sql)
+
+    for row in results:
+        lesson = Lesson(row['name'], row['capacity'], row['category'], row['day'], row['time'], row['duration'], row['id'])
+        lessons.append(lesson)
+    return lessons
 
 
 def delete(id):
