@@ -46,4 +46,5 @@ def delete(id):
 
 
 def delete_all():
-    pass
+    sql = "DELETE FROM bookings"
+    run_sql(sql)
