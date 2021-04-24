@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Locations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Category</th>
+    <th></th>
+    <th>Capacity</th>
+    <th></th>
+    <th>Day</th>
+    <th></th>
+    <th>Time</th>
+    <th></th>
+    <th>Duration</th>
+  </tr>
+  {% for lesson in lessons %}
+  <tr>
+    <td><a href="/lessons/{{ lesson.id }}"> {{lesson.name}} </a></td>
+    <td>|</td>
+    <td>{{lesson.category}}</td>
+    <td>|</td>
+    <td>{{lesson.capacity}}</td>
+    <td>|</td>
+    <td>{{lesson.day}}</td>
+    <td>|</td>
+    <td>{{lesson.time}}</td>
+    <td>|</td>
+    <td>{{lesson.duration}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
