@@ -14,6 +14,7 @@ def save(member):
     member.id = results[0]['id']
     return member
 
+
 def select(id):
     member = None
     sql = "SELECT * FROM members WHERE id = %s"
@@ -40,7 +41,6 @@ def delete(id):
     sql = "DELETE FROM members WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-
 
 
 def delete_all():
