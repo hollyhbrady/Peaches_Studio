@@ -16,7 +16,14 @@ def save(lesson):
 
 
 def select(id):
-    pass
+    lesson = None
+    sql = "SELECT * FROM lessons WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+
+    if result is not None:
+        lesson = Lesson(result['name'], result['capacity'], result['category'], result['day'], result['time'], result['duration'], result['id'])
+    return lesson
 
 
 def select_all():
