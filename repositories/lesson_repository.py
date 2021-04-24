@@ -8,7 +8,11 @@ import repositories.member_repository as member_repository
 import repositories.booking_repository as booking_repository
 
 def save(lesson):
-    pass
+    sql = "INSERT INTO lessons (name, capacity, category, day, time, duration) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [lesson.name, lesson.capacity, lesson.category, lesson.day, lesson.time, lesson.duration]
+    results = run_sql(sql, values)
+    lesson.id = results[0]['id']
+    return lesson
 
 
 def select(id):
