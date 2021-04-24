@@ -38,7 +38,9 @@ def select_all():
 
 
 def delete(id):
-    pass
+    sql = "DELETE FROM lessons WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 
 def delete_all():
