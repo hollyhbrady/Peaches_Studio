@@ -16,7 +16,14 @@ def save(booking):
 
 
 def select(id):
-    pass
+    booking = None
+    sql = "SELECT * FROM bookings WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        booking = Bember(result['member'], result['lesson'], result['id'])
+    return booking
 
 
 def select_all():
