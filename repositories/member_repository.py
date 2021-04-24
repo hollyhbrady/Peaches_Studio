@@ -8,8 +8,11 @@ import repositories.lesson_repository as lesson_repository
 import repositories.booking_repository as booking_repository
 
 def save(member):
-    pass
-
+    sql = "INSERT INTO members (name, membership) VALUES (%s, %s) RETURNING id"
+    values = [member.name, member.membership]
+    results = run_sql(sql, values)
+    member.id = results[0]['id']
+    return member
 
 def select(id):
     pass
