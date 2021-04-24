@@ -27,7 +27,16 @@ def select(id):
 
 
 def select_all():
-    pass
+    bookings = []
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        lesson = lesson_repository.select(row['lesson_id'])
+        booking = Booking(member, lesson, row['id'])
+        bookings.append(booking)
+    return bookings
 
 
 def delete(id):
