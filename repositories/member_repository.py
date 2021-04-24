@@ -41,7 +41,8 @@ def delete(id):
 
 
 def delete_all():
-    pass
+    sql = "DELETE FROM members"
+    run_sql(sql)
 
 
 def lessons(member):
