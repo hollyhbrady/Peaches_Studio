@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{lesson.name}} </h1>
+<p>Category: {{lesson.category}}</p>
+<h3>Booked by:</h3>
+<ul>
+    {% for member in members  %}
+    <li>{{member.name}}</li>
+    {% endfor %}
+</ul>
+<h3>Remaining Capacity:</h3>
+<p>add capacity calculation here</p>
+
+
+{% endblock %}
