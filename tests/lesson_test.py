@@ -14,3 +14,6 @@ class TestLesson(unittest.TestCase):
 
     def test_lesson_has_category(self):
         self.assertEqual('Beginner', self.lesson.category)
+
+    def test_lesson_has_day(self):
+        self.assertEqual('Monday', self.lesson.day)
