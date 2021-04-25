@@ -13,4 +13,7 @@ class TestBooking(unittest.TestCase):
     def test_booking_has_member(self):
         self.assertEqual('Ginny', self.member.name)
 
+    def test_booking_has_lesson(self):
+        self.assertEqual('Sun Salutations', self.lesson.name)
+
     
