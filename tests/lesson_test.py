@@ -8,3 +8,6 @@ class TestLesson(unittest.TestCase):
 
     def test_lesson_has_name(self):
         self.assertEqual('Sun Salutations', self.lesson.name)
+
+    def test_lesson_has_capacity(self):
+        self.assertEqual(10, self.lesson.capacity)
