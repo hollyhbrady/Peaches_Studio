@@ -5,4 +5,18 @@
 <h1>Peaches Yoga Studio: Bookings</h1>
 <p>View all bookings</p>
 
+<table>
+  <tr>
+    <th>Member</th>
+    <th></th>
+    <th>Lesson</th>
+  </tr>
+  {% for booking in bookings %}
+  <tr>
+    <td>{{booking.member.name}}</td>
+    <td>|</td>
+    <td>{{booking.lesson.name}}</td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}
