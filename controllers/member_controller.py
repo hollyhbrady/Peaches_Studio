@@ -12,7 +12,16 @@ def members():
 
 @members_blueprint.route("/members/add", methods=['GET'])
 def members_form():
-    return render_template('member/new.html', title='Add Member')
+    return render_template('members/new.html', title='Add Member', result='result')
+
+@members_blueprint.route('/members/add', methods=["POST"])
+def members_add():
+    name = request.form["name"]
+    membership = request.form["membership"]
+    new_member = Member(name, membership)
+    # member_repository.save(new_member)
+    return render_template('/members/new.html', title='Member Added', result=member_repository.save(new_member))
+    
 
 
 # @members_blueprint.route("/members/<id>")
