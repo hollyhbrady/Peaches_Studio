@@ -52,3 +52,7 @@ def delete_all():
 
 #
 def lesson(booking):
+    pass
+
+def member(booking):
+    pass
