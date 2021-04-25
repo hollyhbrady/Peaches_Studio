@@ -5,8 +5,10 @@ import repositories.member_repository as member_repository
 
 members_blueprint = Blueprint("members", __name__)
 
-# @members_blueprint.route("/members")
-# def members():
+@members_blueprint.route("/members")
+def members():
+    members = user_repository.select_all()
+    return render_template("members/index.html", members = members)
 
 
 # @members_blueprint.route("/members/<id>")

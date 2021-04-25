@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add new Member</h2>
+
+<form class=form-inline action="/result" method="POST">
+    <div class="flex-container">
+        <div class="grid-item1">
+            <input type="text" name="player1">
+            <label for="player1">Player 1</label>
+            <select name="player1gesture">
+
+                <option value="paper">paper</option>
+                <option value="scissors">scissors</option>
+                <option value="rock">rock</option>
+            </select>
+        </div>
+        <div class="grid-item2">
+            <input type="text" name="player2">
+            <label for="player2">Player 2</label>  
+            <select name="player2gesture">
+                <option value="paper">paper</option>
+                <option value="scissors">scissors</option>
+                <option value="rock">rock</option>
+            </select>
+        </div>
+        <div class="grid-item3">
+            <p>
+                <input id="play-button" type="submit" value="Play">
+            </p>
+        </div>
+    </div>
+    
+</form>
+
+{{ result }}
+
+{% endblock %}
