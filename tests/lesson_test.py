@@ -20,3 +20,6 @@ class TestLesson(unittest.TestCase):
 
     def test_lesson_has_time(self):
         self.assertEqual(800, self.lesson.time)
+
+    def test_lesson_has_duration(self):
+        self.assertEqual(60, self.lesson.duration)
