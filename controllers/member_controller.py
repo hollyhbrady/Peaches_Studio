@@ -12,9 +12,9 @@ def members():
 
 @members_blueprint.route("/members/add", methods=['GET'])
 def members_form():
-    return render_template('members/new.html', title='Add Member', result='result')
+    return render_template('members/new.html', title='Add Member')
 
-@members_blueprint.route('/members/add', methods=["POST"])
+@members_blueprint.route("/members/add", methods=['POST'])
 def members_add():
     name = request.form["name"]
     membership = request.form["membership"]
