@@ -24,4 +24,10 @@ member_repository.save(member3)
 member4 = Member('Nadine', 'Standard')
 member_repository.save(member4)
 
+lesson1 = Lesson('Sun Salutations', 10, 'Beginner', 'Monday', 800, 60)
+lesson_repository.save(lesson1)
+
+lesson2 = Lesson('Yoga for Flexibility', 5, 'Beginner', 'Wednesday', 1700, 45)
+lesson_repository.save(lesson2)
+
 pdb.set_trace()
