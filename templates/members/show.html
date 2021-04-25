@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{member.name}} </h1>
+
+<h3>Booked in for:</h3>
+
+<ul>
+    {% for lesson in lessons  %}
+    <li>{{lesson.name}}</li>
+    <li>{{lesson.category}}</li>
+    <li>{{lesson.day}}</li>
+    <li>{{lesson.time}}</li>
+    <li>{{lesson.duration}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
