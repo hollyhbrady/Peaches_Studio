@@ -22,7 +22,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        booking = Bember(result['member'], result['lesson'], result['id'])
+        booking = Member(result['member'], result['lesson'], result['id'])
     return booking
 
 
@@ -49,10 +49,3 @@ def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
 
-
-#
-def lesson(booking):
-    pass
-
-def member(booking):
-    pass
