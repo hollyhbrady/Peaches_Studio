@@ -11,3 +11,6 @@ class TestLesson(unittest.TestCase):
 
     def test_lesson_has_capacity(self):
         self.assertEqual(10, self.lesson.capacity)
+
+    def test_lesson_has_category(self):
+        self.assertEqual('Beginner', self.lesson.category)
