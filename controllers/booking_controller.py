@@ -8,17 +8,17 @@ import repositories.member_repository as member_repository
 
 bookings_blueprint = Blueprint("bookings", __name__)
 
-@bookings_blueprint.route("/bookings")
-def bookings():
+# @bookings_blueprint.route("/bookings")
+# def bookings():
 
 
-@bookings_blueprint.route("/bookings/new", methods=['GET'])
-def new_booking():
+# @bookings_blueprint.route("/bookings/new", methods=['GET'])
+# def new_booking():
 
 
-@bookings_blueprint.route("/bookings", methods=['POST'])
-def create_booking():
+# @bookings_blueprint.route("/bookings", methods=['POST'])
+# def create_booking():
 
 
-@bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
-def delete_booking(id):
+# @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
+# def delete_booking(id):

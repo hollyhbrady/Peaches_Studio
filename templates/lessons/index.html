@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Locations</h1>
+<h1>Lessons</h1>
 
 <table>
   <tr>
@@ -20,7 +20,7 @@
   </tr>
   {% for lesson in lessons %}
   <tr>
-    <td><a href="/lessons/{{ lesson.id }}"> {{lesson.name}} </a></td>
+    <td><a href="/lessons/{{lesson.id}}"> {{lesson.name}} </a></td>
     <td>|</td>
     <td>{{lesson.category}}</td>
     <td>|</td>
