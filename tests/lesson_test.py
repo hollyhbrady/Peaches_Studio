@@ -4,7 +4,7 @@ from models.lesson import Lesson
 class TestLesson(unittest.TestCase):
 
     def setUp(self):
-        self.lesson = Lesson('Sun Salutations', 10, 'Beginner', 'Monday', 800, 60)
+        self.lesson = Lesson('Sun Salutations', 10, 'Beginner', 'Monday', "08:00", 60)
 
     def test_lesson_has_name(self):
         self.assertEqual('Sun Salutations', self.lesson.name)
@@ -19,7 +19,7 @@ class TestLesson(unittest.TestCase):
         self.assertEqual('Monday', self.lesson.day)
 
     def test_lesson_has_time(self):
-        self.assertEqual(800, self.lesson.time)
+        self.assertEqual("08:00", self.lesson.time)
 
     def test_lesson_has_duration(self):
         self.assertEqual(60, self.lesson.duration)

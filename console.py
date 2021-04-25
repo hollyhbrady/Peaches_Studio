@@ -24,10 +24,10 @@ member_repository.save(member3)
 member4 = Member('Nadine', 'Standard')
 member_repository.save(member4)
 
-lesson1 = Lesson('Sun Salutations', 10, 'Beginner', 'Monday', 800, 60)
+lesson1 = Lesson('Sun Salutations', 10, 'Beginner', 'Monday', "08:00", 60)
 lesson_repository.save(lesson1)
 
-lesson2 = Lesson('Yoga for Flexibility', 5, 'Beginner', 'Wednesday', 1700, 45)
+lesson2 = Lesson('Yoga for Flexibility', 5, 'Beginner', 'Wednesday', "17:00", 45)
 lesson_repository.save(lesson2)
 
 booking1 = Booking(member1, lesson1)

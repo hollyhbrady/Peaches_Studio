@@ -11,12 +11,14 @@ def lessons():
     return render_template("lessons/index.html", lessons = lessons)
 
 
+@lessons_blueprint.route("/lessons/new", methods=['GET'])
+def lesson_form():
+    return render_template('lessons/new.html', methods=['POST'])
+
+
 # @lessons_blueprint.route("/lessons/<id>")
 # def show_lesson(id):
 
-
-# @lessons_blueprint.route("/lessons/new")
-# def new_lesson(id):
 
 
 # @lessons_blueprint.route("/lessons/<id>/delete")

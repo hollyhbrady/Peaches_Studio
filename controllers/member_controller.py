@@ -10,11 +10,11 @@ def members():
     members = member_repository.select_all()
     return render_template("members/index.html", members = members)
 
-@members_blueprint.route("/members/add", methods=['GET'])
+@members_blueprint.route("/members/new", methods=['GET'])
 def members_form():
     return render_template('members/new.html', title='Add Member')
 
-@members_blueprint.route("/members/add", methods=['POST'])
+@members_blueprint.route("/members/new", methods=['POST'])
 def members_add():
     name = request.form["name"]
     membership = request.form["membership"]
