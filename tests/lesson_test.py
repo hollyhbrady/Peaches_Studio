@@ -17,3 +17,6 @@ class TestLesson(unittest.TestCase):
 
     def test_lesson_has_day(self):
         self.assertEqual('Monday', self.lesson.day)
+
+    def test_lesson_has_time(self):
+        self.assertEqual(800, self.lesson.time)
