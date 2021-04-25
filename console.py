@@ -30,4 +30,16 @@ lesson_repository.save(lesson1)
 lesson2 = Lesson('Yoga for Flexibility', 5, 'Beginner', 'Wednesday', 1700, 45)
 lesson_repository.save(lesson2)
 
+booking1 = Booking(member1, lesson1)
+booking_repository.save(booking1)
+
+booking2 = Booking(member2, lesson2)
+booking_repository.save(booking2)
+
+booking3 = Booking(member3, lesson2)
+booking_repository.save(booking3)
+
+booking4 = Booking(member4, lesson1)
+booking_repository.save(booking4)
+
 pdb.set_trace()
