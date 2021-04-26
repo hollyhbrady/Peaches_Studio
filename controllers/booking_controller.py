@@ -23,7 +23,7 @@ def booking_form():
 def booking_add():
     member = request.form["member"]
     lesson = request.form["lesson"]
-    new_booking = Booking(member, lesson)
+    new_booking = Booking(member_id, lesson_id)
     return render_template('/bookings/new.html', title='Booking Added', result=booking_repository.save(new_booking))
 
 
