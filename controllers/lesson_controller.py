@@ -37,6 +37,18 @@ def lessons_edit(id):
     lesson = lesson_repository.select(id)
     return render_template('/lessons/edit.html', lesson = lesson)
 
+@lessons_blueprint.route("/lessons/<id>", methods=['POST'])
+def lessons_update(id):
+    name = request.form['name']
+    capacity = request.form['capacity']
+    category = request.form['category']
+    day = request.form['day']
+    time = request.form['time']
+    duration = request.form['duration']
+    lesson = Lesson(name, capacity, category, day, time, duration, id)
+    lesson_repository.update(lesson)
+    return redirect('/lessons')
+
 
 
 # @lessons_blueprint.route("/lessons/<id>/delete")
