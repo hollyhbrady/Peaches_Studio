@@ -13,7 +13,6 @@ def save(lesson):
     sql = "INSERT INTO lessons (name, capacity, category, day, time, duration) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
     values = [lesson.name, lesson.capacity, lesson.category, lesson.day, lesson.time, lesson.duration]
     results = run_sql(sql, values)
-    pdb.set_trace()
     id = results[0]['id']
     lesson.id = id
     # return f"New lesson {lesson.name} on {lesson.day} at {lesson.time} has been saved!"
@@ -50,6 +49,11 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM lessons"
     run_sql(sql)
+
+def update(lesson):
+    sql = "UPDATE lessons SET (name, capacity, category, day, time, duration) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [lesson.name, lesson.capacity, lesson.category, lesson.day, lesson.time, lesson.duration, lesson.id]
+    run_sql(sql, values)
 
 
 # SELECT FROM MEMBERS WHERE LESSON IS...
