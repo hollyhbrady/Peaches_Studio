@@ -7,12 +7,16 @@ from models.member import Member
 import repositories.member_repository as member_repository
 import repositories.booking_repository as booking_repository
 
+import pdb
+
 def save(lesson):
-    sql = "INSERT INTO lessons (name, capacity, category, day, time, duration) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO lessons (name, capacity, category, day, time, duration) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
     values = [lesson.name, lesson.capacity, lesson.category, lesson.day, lesson.time, lesson.duration]
     results = run_sql(sql, values)
-    lesson.id = results[0]['id']
-    return f"New lesson {lesson.name} on {lesson.day} at {lesson.time} has been saved!"
+    pdb.set_trace()
+    id = results[0]['id']
+    lesson.id = id
+    # return f"New lesson {lesson.name} on {lesson.day} at {lesson.time} has been saved!"
 
 
 def select(id):

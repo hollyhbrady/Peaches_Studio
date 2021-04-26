@@ -8,7 +8,7 @@ CREATE TABLE lessons (
     capacity INT,
     category VARCHAR(225),
     day VARCHAR(225),
-    time VARCHAR(225)
+    time VARCHAR(225),
     duration INT
 );
 
