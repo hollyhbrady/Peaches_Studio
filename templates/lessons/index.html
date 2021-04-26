@@ -26,10 +26,14 @@
     <td>{{lesson.time}}</td>
     <td>{{lesson.duration}}</td>
     <td>
-        <button><a href="/lessons/{{lesson.id}}/delete">Delete</a></button></form>
+      <form action="/lessons/{{lesson.id}}/delete" method='POST'> 
+        <input type="submit" value="delete">
+      </form>
     </td>
     <td>
-        <button><a href="/lessons/{{lesson.id}}/edit">Edit</a></button>
+      <form action="/lessons/{{lesson.id}}/edit">
+        <input type="submit" value="edit">
+    </form>
     </td>
   </tr>
   {% endfor %}

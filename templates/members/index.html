@@ -21,7 +21,9 @@
       </form>
     </td>
     <td>
-      <button><a href="/members/{{member.id}}/edit">Edit</a></button>
+      <form action="/members/{{member.id}}/edit">
+        <input type="submit" value="edit">
+    </form>
     </td>
   </tr>
   {% endfor %}
