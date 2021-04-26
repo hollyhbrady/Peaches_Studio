@@ -21,9 +21,9 @@ def booking_form():
 
 @bookings_blueprint.route("/bookings/new", methods=['POST'])
 def booking_add():
-    member = request.form["member"]
-    lesson = request.form["lesson"]
-    new_booking = Booking(member_id, lesson_id)
+    member = request.form["member_id"]
+    lesson = request.form["lesson_id"]
+    new_booking = Booking(member, lesson)
     return render_template('/bookings/new.html', title='Booking Added', result=booking_repository.save(new_booking))
 
 
