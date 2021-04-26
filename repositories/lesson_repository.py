@@ -12,7 +12,7 @@ def save(lesson):
     values = [lesson.name, lesson.capacity, lesson.category, lesson.day, lesson.time, lesson.duration]
     results = run_sql(sql, values)
     lesson.id = results[0]['id']
-    return lesson
+    return f"New lesson {lesson.name} on {lesson.day} at {lesson.time} has been saved!"
 
 
 def select(id):
@@ -48,7 +48,7 @@ def delete_all():
     run_sql(sql)
 
 
-#FIND ALL MEMBERS BOOKED FOR A LESSON
+# SELECT FROM MEMBERS WHERE LESSON IS...
 def members(lesson):
     members = []
     sql = "SELECT members.* FROM members INNER JOIN bookings on bookings.member_id = members.id WHERE lesson_id = %s"
