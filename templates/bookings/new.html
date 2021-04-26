@@ -4,18 +4,25 @@
 <h1>Create new Booking</h1>
 
 <form action="/bookings" method="post">
-  <label for="member">Select a member:</label>
-    <select name="member_id" id="member">
-      {% for member in members %}
-      <option value="{{member.id}}">{{member.name}}</option>
-      {% endfor %}
-    </select>
+  <div>
+    <label for="member">Select a member:</label>
+      <select name="member_id" id="member">
+        {% for member in members %}
+        <option value="{{member.id}}">{{member.name}}</option>
+        {% endfor %}
+      </select>
+  </div>
+  <div>
   <label for="lesson">Select a lesson:</label>
     <select name="lesson_id" id="lesson">
       {% for lesson in lessons %}
       <option value="{{lesson.id}}">{{lesson.name}} on {{lesson.day}}</option>
       {% endfor %}
     </select>
+  </div>
+  <div>
+    <input class="btn btn--action" type='submit' value="Add Booking">
+  </div>
 </form>
 
 {% endblock %}
