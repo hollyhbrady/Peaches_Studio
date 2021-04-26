@@ -46,7 +46,7 @@ def members_update(id):
 
 @members_blueprint.route("/members/<id>/delete", methods=['POST'])
 def members_delete(id):
-    # pdb.set_trace()
+
     member_repository.delete(id)
     return redirect('/members')
 

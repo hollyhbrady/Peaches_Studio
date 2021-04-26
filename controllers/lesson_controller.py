@@ -32,6 +32,12 @@ def show_lesson(id):
     members = lesson_repository.members(lesson)
     return render_template('lessons/show.html', lesson = lesson, members = members)
 
+@members_blueprint.route("/lessons/<id>/edit", methods=['GET'])
+def lessons_edit(id):
+    lesson = lesson_repository.select(id)
+    return render_template('/lessons/edit.html', lesson = lesson)
+
+
 
 # @lessons_blueprint.route("/lessons/<id>/delete")
 # def delete_lesson(id):
