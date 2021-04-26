@@ -22,7 +22,6 @@ def members_add():
     name = request.form["name"]
     membership = request.form["membership"]
     new_member = Member(name, membership)
-    # member_repository.save(new_member)
     return render_template('/members/new.html', title='Member Added', result=member_repository.save(new_member))
     
 @members_blueprint.route("/members/<id>", methods=['GET'])

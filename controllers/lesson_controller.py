@@ -23,8 +23,7 @@ def lessons_add():
     time = request.form['time']
     duration = request.form['duration']
     new_lesson = Lesson(name, capacity, category, day, time, duration)
-    lesson_repository.save(new_lesson)
-    return render_template('lessons/new.html', title='Lesson Added')
+    return render_template('lessons/new.html', title='Lesson Added', result=lesson_repository.save(new_lesson))
 
 @lessons_blueprint.route("/lessons/<id>", methods=['GET'])
 def show_lesson(id):

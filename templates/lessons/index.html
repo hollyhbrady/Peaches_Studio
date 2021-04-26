@@ -12,6 +12,8 @@
     <th>Capacity</th>
     <th>Day</th>
     <th>Time</th>
+    <th></th>
+    <th></th>
     <th>Duration</th>
     <th></th>
     <th></th>
@@ -24,7 +26,9 @@
     <td>{{lesson.capacity}}</td>
     <td>{{lesson.day}}</td>
     <td>{{lesson.time}}</td>
-    <td>{{lesson.duration}}</td>
+    <td></td>
+    <td></td>
+    <td>{{lesson.duration}} minutes</td>
     <td>
       <form action="/lessons/{{lesson.id}}/delete" method='POST'> 
         <input type="submit" value="delete">
