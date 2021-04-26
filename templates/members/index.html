@@ -16,11 +16,10 @@
     <td><a href="/members/{{member.id}}">{{member.name}}</a></td>
     <td>{{member.membership}}</td>
     <td>
-      <form action="/members/{{member.id}}/delete" method="POST">
       <button><a href="/members/{{member.id}}/delete">Delete</a></button></form>
     </td>
     <td>
-      <button><a href="/members/{{member.id}}">Edit</a></button>
+      <button><a href="/members/{{member.id}}/edit">Edit</a></button>
     </td>
   </tr>
   {% endfor %}

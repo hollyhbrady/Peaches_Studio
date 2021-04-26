@@ -47,6 +47,11 @@ def delete_all():
     sql = "DELETE FROM members"
     run_sql(sql)
 
+def update(member):
+    sql = "UPDATE members SET (name, membership) = (%s, %s) WHERE id = %s"
+    values = [member.name, member.membership, user.id]
+    run_sql(sql, values)
+
 
 # SELECT FROM LESSONS WHERE A MEMBER IS...
 def lessons(member):

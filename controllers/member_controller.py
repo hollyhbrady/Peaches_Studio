@@ -27,17 +27,23 @@ def members_add():
 def members_show(id):
     member = member_repository.select(id)
     lessons = member_repository.lessons(member)
-    return render_template('members/show.html', member = member, lessons=lessons)
+    return render_template('/members/show.html', member = member, lessons=lessons)
 
-# @members_blueprint.route("/members/<id>/edit", methods=['GET'])
-# def members_edit(id):
-#     member = member_repository.select(id)
-#     return render_template('members/show.html', member = member)
+@members_blueprint.route("/members/<id>/edit", methods=['GET'])
+def members_edit(id):
+    member = member_repository.select(id)
+    return render_template('/members/edit.html', member = member)
 
-# @members_blueprint.route("members/<id>", methods=['POST'])
-# def members_update(id):
-#     name = request.form["name"]
-#     membership = request.form["membership"]
-#     new_member = Member(name, membership)
+@members_blueprint.route("/members/<id>", methods=['POST'])
+def members_update(id):
+    name = request.form["name"]
+    membership = request.form["membership"]
+    lesson = lesson_repository.select(id)
+    member_repository.update(member)
+    return redirect('/members')
 
-@members_blueprint
+@members_blueprint.route("/members/<id>/delete", methods=['POST'])
+def members_delete(id):
+    member_repository.delete(id)
+    return redirect('/members')
+

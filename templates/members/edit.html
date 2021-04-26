@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Member: {{member.name}}</h2>
+
+<form class=form action="/members/{{member.id}}" method="POST">
+    <div class="flex-container">
+        <div class="grid-item1">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{member.name}}" required>
+        </div>
+        <div class="grid-item2">
+            <label for="membership">Membership</label>  
+            <select name="membership">
+                <option value="Deluxe">Deluxe</option>
+                <option value="Standard">Standard</option>
+            </select>
+        </div>
+        <div class="grid-item3">
+            <p>
+                <input class="button" type="submit" value="Edit Member">
+            </p>
+        </div>
+    </div>
+</form>
+
+{{result}}
+
+{% endblock %}
