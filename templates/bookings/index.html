@@ -9,12 +9,24 @@
     <th>Member</th>
     <th></th>
     <th>Lesson</th>
+    <th></th>
+    <th>Day</th>
+    <th></th>
+    <th>Time</th>
+    <th></th>
+    <th>Duration</th>
   </tr>
   {% for booking in bookings %}
   <tr>
     <td>{{booking.member.name}}</td>
-    <td>|</td>
+    <td></td>
     <td>{{booking.lesson.name}}</td>
+    <td></td>
+    <td>{{booking.lesson.day}}</td>
+    <td></td>
+    <td>{{booking.lesson.time}}</td>
+    <td></td>
+    <td>{{booking.lesson.duration}} minutes</td>
   </tr>
   {% endfor %}
 </table>

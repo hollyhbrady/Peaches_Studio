@@ -21,8 +21,8 @@ def select(id):
     values = [id]
     results = run_sql(sql, values)[0]
 
-    if result is not None:
-        lesson = Lesson(result['name'], result['capacity'], result['category'], result['day'], result['time'], result['duration'], result['id'])
+    if results is not None:
+        lesson = Lesson(results['name'], results['capacity'], results['category'], results['day'], results['time'], results['duration'], results['id'])
     return lesson
 
 

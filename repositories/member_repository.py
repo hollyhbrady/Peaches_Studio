@@ -59,3 +59,4 @@ def lessons(member):
         lesson = Lesson(row['name'], row['capacity'], row['category'], row['day'], row['time'], row['duration'], row['id'])
         lessons.append(lesson)
     return lessons
+    # f"{lesson.name} on {lessons.day} at {lessons.time}"

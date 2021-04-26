@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.member import Member
 import repositories.member_repository as member_repository
+import repositories.lesson_repository as lesson_repository
 
 members_blueprint = Blueprint("members", __name__)
 
@@ -25,7 +26,8 @@ def members_add():
 @members_blueprint.route("/members/<id>", methods=['GET'])
 def members_show(id):
     member = member_repository.select(id)
-    return render_template('members/show.html', member = member)
+    lessons = member_repository.lessons(member)
+    return render_template('members/show.html', member = member, lessons=lessons)
 
 # @members_blueprint.route("/members/<id>/edit", methods=['GET'])
 # def members_edit(id):
@@ -37,3 +39,5 @@ def members_show(id):
 #     name = request.form["name"]
 #     membership = request.form["membership"]
 #     new_member = Member(name, membership)
+
+@members_blueprint

@@ -8,15 +8,10 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th>Category</th>
-    <th></th>
+    <th>Category</th>  
     <th>Capacity</th>
-    <th></th>
     <th>Day</th>
-    <th></th>
     <th>Time</th>
-    <th></th>
     <th>Duration</th>
     <th></th>
     <th></th>
@@ -24,17 +19,12 @@
   {% for lesson in lessons %}
   <tr>
     <td><a href="/lessons/{{lesson.id}}"> {{lesson.name}} </a></td>
-    <td>|</td>
+    
     <td>{{lesson.category}}</td>
-    <td>|</td>
     <td>{{lesson.capacity}}</td>
-    <td>|</td>
     <td>{{lesson.day}}</td>
-    <td>|</td>
     <td>{{lesson.time}}</td>
-    <td>|</td>
     <td>{{lesson.duration}}</td>
-    <td></td>
     <td>
         <form action="/lessons/{{lesson.id}}/delete" method="POST">
         <button><a href="/lessons/{{lesson.id}}/delete">Delete</a></button></form>

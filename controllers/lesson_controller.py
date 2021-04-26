@@ -25,9 +25,11 @@ def lessons_add():
     new_lesson = Lesson(name, capacity, category, day, time, duration)
     return render_template('lessons/new.html', title='Lesson Added', result=lesson_repository.save(new_lesson))
 
-# @lessons_blueprint.route("/lessons/<id>")
-# def show_lesson(id):
-
+@lessons_blueprint.route("/lessons/<id>", methods=['GET'])
+def show_lesson(id):
+    lesson = lesson_repository.select(id)
+    members = lesson_repository.members(lesson)
+    return render_template('lessons/show.html', lesson = lesson, members = members)
 
 
 # @lessons_blueprint.route("/lessons/<id>/delete")
