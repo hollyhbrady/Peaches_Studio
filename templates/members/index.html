@@ -9,12 +9,22 @@
     <th>Name</th>
     <th></th>
     <th>Membership Level</th>
+    <th></th>
+    <th></th>
   </tr>
   {% for member in members %}
   <tr>
     <td><a href="/members/{{member.id}}">{{member.name}}</a></td>
     <td>|</td>
     <td>{{member.membership}}</td>
+    <td></td>
+    <td>
+      <form action="/members/{{member.id}}/delete" method="POST">
+      <button><a href="/members/{{member.id}}/delete">Delete</a></button></form>
+    </td>
+    <td>
+      <button><a href="/members/{{member.id}}">Edit</a></button>
+    </td>
   </tr>
   {% endfor %}
 </table>

@@ -22,7 +22,18 @@ def members_add():
     # member_repository.save(new_member)
     return render_template('/members/new.html', title='Member Added', result=member_repository.save(new_member))
     
+@members_blueprint.route("/members/<id>", methods=['GET'])
+def members_show(id):
+    member = member_repository.select(id)
+    return render_template('members/show.html', member = member)
 
+# @members_blueprint.route("/members/<id>/edit", methods=['GET'])
+# def members_edit(id):
+#     member = member_repository.select(id)
+#     return render_template('members/show.html', member = member)
 
-# @members_blueprint.route("/members/<id>")
-# def show_member(id):
+# @members_blueprint.route("members/<id>", methods=['POST'])
+# def members_update(id):
+#     name = request.form["name"]
+#     membership = request.form["membership"]
+#     new_member = Member(name, membership)

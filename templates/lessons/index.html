@@ -18,6 +18,8 @@
     <th>Time</th>
     <th></th>
     <th>Duration</th>
+    <th></th>
+    <th></th>
   </tr>
   {% for lesson in lessons %}
   <tr>
@@ -32,6 +34,14 @@
     <td>{{lesson.time}}</td>
     <td>|</td>
     <td>{{lesson.duration}}</td>
+    <td></td>
+    <td>
+        <form action="/lessons/{{lesson.id}}/delete" method="POST">
+        <button><a href="/lessons/{{lesson.id}}/delete">Delete</a></button></form>
+    </td>
+    <td>
+        <button><a href="/lessons/{{lesson.id}}">Edit</a></button>
+    </td>
   </tr>
   {% endfor %}
 </table>
