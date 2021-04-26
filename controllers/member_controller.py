@@ -45,7 +45,6 @@ def members_update(id):
 
 @members_blueprint.route("/members/<id>/delete", methods=['POST'])
 def members_delete(id):
-
     member_repository.delete(id)
     return redirect('/members')
 
