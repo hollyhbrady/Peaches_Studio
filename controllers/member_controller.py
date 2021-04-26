@@ -4,6 +4,8 @@ from models.member import Member
 import repositories.member_repository as member_repository
 import repositories.lesson_repository as lesson_repository
 
+import pdb
+
 members_blueprint = Blueprint("members", __name__)
 
 @members_blueprint.route("/members")
@@ -38,12 +40,13 @@ def members_edit(id):
 def members_update(id):
     name = request.form["name"]
     membership = request.form["membership"]
-    lesson = lesson_repository.select(id)
+    member = Member(name, membership, id)
     member_repository.update(member)
     return redirect('/members')
 
 @members_blueprint.route("/members/<id>/delete", methods=['POST'])
 def members_delete(id):
+    # pdb.set_trace()
     member_repository.delete(id)
     return redirect('/members')
 
