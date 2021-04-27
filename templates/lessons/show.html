@@ -5,14 +5,16 @@
 <h3>{{lesson.name}}</h3>
 <p>Category: {{lesson.category}}</p>
 <h4>Booked by:</h4>
-<ul>
+<ol>
     {% for member in members  %}
     <li>{{member.name}}</li>
     {% endfor %}
-</ul>
+</ol>
 <hr>
 <h4>Remaining Capacity:</h4>
-<p>add capacity calculation here</p>
+{% for member in members  %}
+{{member.capacity}}
+{% endfor %}
 
 
 {% endblock %}
