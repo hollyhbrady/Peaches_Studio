@@ -1,6 +1,5 @@
 header {
-    align-items: center;
-    background-color: rgb(243, 168, 158);
+    background-color: rgb(243, 171, 158);
     padding: 10px;
     position: fixed;
     top: 0%;
@@ -15,8 +14,7 @@ main {
 }
 
 footer {
-    align-items: center;
-    background-color: rgb(243, 168, 158);
+    background-color: rgb(243, 171, 158);
     position: fixed;
     bottom: 0px;
     left: 0%;

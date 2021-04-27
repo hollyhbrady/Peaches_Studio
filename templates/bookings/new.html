@@ -16,7 +16,7 @@
   <label for="lesson">Select a lesson:</label>
     <select name="lesson_id" id="lesson">
       {% for lesson in lessons %}
-      <option value="{{lesson.id}}">{{lesson.name}} on {{lesson.day}} at {{lesson.duration}}</option>
+      <option value="{{lesson.id}}">{{lesson.name}} on {{lesson.day}}</option>
       {% endfor %}
     </select>
   </div>
