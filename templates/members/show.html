@@ -3,7 +3,7 @@
 {% block content %}
 <h3> {{member.name}} is booked in for:</h3>
 <div>
-    {% for lesson in lessons  %}
+    {% for lesson in lessons %}
     <p>{{lesson.name}}: {{lesson.category}} level on {{lesson.day}} at {{lesson.time}} for {{lesson.duration}} minutes</p>
     {% endfor %}
 </div>

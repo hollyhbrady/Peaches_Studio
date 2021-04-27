@@ -2,15 +2,16 @@
 
 {% block content %}
 
-<h1> {{lesson.name}} </h1>
+<h3>{{lesson.name}}</h3>
 <p>Category: {{lesson.category}}</p>
-<h3>Booked by:</h3>
+<h4>Booked by:</h4>
 <ul>
     {% for member in members  %}
     <li>{{member.name}}</li>
     {% endfor %}
 </ul>
-<h3>Remaining Capacity:</h3>
+<hr>
+<h4>Remaining Capacity:</h4>
 <p>add capacity calculation here</p>
 
 
