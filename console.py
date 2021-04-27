@@ -12,18 +12,6 @@ booking_repository.delete_all()
 lesson_repository.delete_all()
 member_repository.delete_all()
 
-member1 = Member('Ginny', 'Deluxe')
-member_repository.save(member1)
-
-member2 = Member('Max', 'Deluxe')
-member_repository.save(member2)
-
-member3 = Member('Abby', 'Standard')
-member_repository.save(member3)
-
-member4 = Member('Nadine', 'Standard')
-member_repository.save(member4)
-
 lesson1 = Lesson('Sun Salutations', 10, 'Intermediate', 'Monday', "08:00", 60)
 lesson_repository.save(lesson1)
 lesson2 = Lesson('Sun Salutations', 10, 'Intermediate', 'Wednesday', "08:00", 60)
@@ -53,8 +41,50 @@ lesson_repository.save(lesson11)
 lesson12 = Lesson('How to kill your Spouse', 10, 'Advanced', 'Saturday', "14:00", 60)
 lesson_repository.save(lesson12)
 
+member1 = Member('Ginny Miller', 'Deluxe')
+member_repository.save(member1)
 
+member2 = Member('Maxine Baker', 'Deluxe')
+member_repository.save(member2)
 
+member3 = Member('Abby Mang', 'Standard')
+member_repository.save(member3)
+
+member4 = Member('Nadine Mang', 'Standard')
+member_repository.save(member4)
+
+member5 = Member('Georgia Miller', 'Deluxe')
+member_repository.save(member5)
+
+member6 = Member('Hunter Chen', 'Standard')
+member_repository.save(member6)
+
+member7 = Member('Marcus Baker', 'Deluxe')
+member_repository.save(member7)
+
+member8 = Member('Ellen Baker', 'Deluxe')
+member_repository.save(member8)
+
+member9 = Member('Paul Randolph', 'Standard')
+member_repository.save(member9)
+
+member10 = Member('Zion Miller', 'Deluxe')
+member_repository.save(member10)
+
+member11 = Member('Sophie Sanchez', 'Standard')
+member_repository.save(member11)
+
+member12 = Member('Cynthia Fuller', 'Deluxe')
+member_repository.save(member12)
+
+member13 = Member('Ellen Baker', 'Deluxe')
+member_repository.save(member13)
+
+member14 = Member('Joe Danes', 'Standard')
+member_repository.save(member14)
+
+member15 = Member('Nick Bierne', 'Standard')
+member_repository.save(member15)
 
 
 booking1 = Booking(member1, lesson1)
