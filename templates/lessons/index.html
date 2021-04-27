@@ -7,7 +7,7 @@
 <hr>
 <h3>Current Lessons</h3>
 <p><input type="text" placeholder="Search.."></p>
-<table class=space>
+<table border="0" width="100%">
   <tr>
     <th>Name</th>
     <th>Category</th>  
@@ -32,13 +32,13 @@
     <td></td>
     <td>{{lesson.duration}} minutes</td>
     <td>
-      <form action="/lessons/{{lesson.id}}/delete" method='POST'> 
-        <input type="submit" value="delete">
+      <form class="button" action="/lessons/{{lesson.id}}/delete" method='POST'> 
+        <input class="button" type="submit" value="delete">
       </form>
     </td>
     <td>
-      <form action="/lessons/{{lesson.id}}/edit">
-        <input type="submit" value="edit">
+      <form class="button" action="/lessons/{{lesson.id}}/edit">
+        <input class="button" type="submit" value="edit">
     </form>
     </td>
   </tr>

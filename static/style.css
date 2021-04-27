@@ -27,9 +27,19 @@ footer {
     font-family: 'Oxygen', sans-serif;
 }
 
-#space {
+tr.1 {
     display: flex;
-    justify-content: space-between;
+    align-self: flex-start;
 }
+
+form.button {
+    color: purple;
+    border-radius: 0px;
+    transition-duration: 0.4s;
+}
+
+form.button:hover {
+    color: rgb(46, 148, 37);
+  }
 
 
