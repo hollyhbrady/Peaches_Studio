@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>Edit Lesson: {{lesson.name}}, {lesson.category}} level, on {{lesson.day}} at {{lesson.time}}</h2>
+<h3>Edit Lesson: {{lesson.name}}, {{lesson.category}} level, on {{lesson.day}} at {{lesson.time}}</h3>
 
 <form class=form action="/lessons/{{lesson.id}}" method="POST">
     <div class="flex-container">

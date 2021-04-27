@@ -50,3 +50,9 @@ def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
 
+
+def update(visit):
+    sql = "UPDATE bookings SET (member_id, lesson_id) = (%s, %s) WHERE id = %s"
+    values = [booking.member.id, booking.lesson.id, lesson.id]
+    run_sql(sql, values)
+
