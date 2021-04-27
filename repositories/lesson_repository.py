@@ -28,7 +28,6 @@ def select(id):
         lesson = Lesson(results['name'], results['capacity'], results['category'], results['day'], results['time'], results['duration'], results['id'])
     return lesson
 
-
 def select_all():
     lessons = []
     sql = "SELECT * FROM lessons"
@@ -57,7 +56,7 @@ def update(lesson):
 
 
 # SELECT FROM MEMBERS WHERE LESSON IS...
-def members(lesson):
+def members_in(lesson):
     members = []
     sql = "SELECT members.* FROM members INNER JOIN bookings on bookings.member_id = members.id WHERE lesson_id = %s"
     values = [lesson.id]
@@ -67,3 +66,11 @@ def members(lesson):
         member = Member(row['name'], row['membership'])
         members.append(member)
     return members
+
+# def lesson_vacancy(id):
+#     vacancy = []
+
+#     lesson = lesson_repository.select(id)
+#     vacancy = lesson.capacity - len(members_in(lesson))
+
+#     return len.vacancy

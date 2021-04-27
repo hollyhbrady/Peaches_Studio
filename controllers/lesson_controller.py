@@ -28,7 +28,7 @@ def lessons_add():
 @lessons_blueprint.route("/lessons/<id>", methods=['GET'])
 def show_lesson(id):
     lesson = lesson_repository.select(id)
-    members = lesson_repository.members(lesson)
+    members = lesson_repository.members_in(lesson)
     return render_template('lessons/show.html', lesson = lesson, members = members)
 
 @lessons_blueprint.route("/lessons/<id>/edit", methods=['GET'])
