@@ -12,8 +12,7 @@ def save(booking):
     values = [booking.member.id, booking.lesson.id]
     results = run_sql(sql, values)
     booking.id = results[0]['id']
-    return booking
-    #f"New booking for {member.name} has been made for {lesson.name} on {lesson.day}."
+    return f"New booking for {booking.member.name} has been made for {booking.lesson.name} on {booking.lesson.day}."
 
 
 def select(id):
