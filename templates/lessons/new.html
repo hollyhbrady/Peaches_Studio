@@ -8,11 +8,11 @@
     <div class="flex-container">
         <div class="grid-item1">
             <label for="name">Name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" required>
         </div>
         <div class="grid-item2">
             <label for="capacity">Capacity</label>
-            <input type="number" name="capacity" min="0" max="30">
+            <input type="number" name="capacity" min="0" max="30" required>
         </div>
         <div class="grid-item3">
             <label for="category">Category</label>  
@@ -36,14 +36,14 @@
         </div>
         <div class="grid-item5">
             <label for="name">Time</label>
-            <input type="time" name="time" min="06:00" max="20:00">
+            <input type="time" name="time" min="06:00" max="20:00" required>
         </div>
         <div class="grid-item6">
             <label for="duration">Duration</label>
-            <input type="number" name="duration" min="0" max="120">
+            <input type="number" name="duration" min="0" max="120" required>
         </div>
         <div class="grid-item7">
-            <input class="button" type="submit" value="Add Lesson">
+            <input class="button" type="submit" value="Add Lesson" required>
         </div>
     </div>    
 </form>
