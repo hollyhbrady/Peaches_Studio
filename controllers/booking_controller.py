@@ -26,6 +26,15 @@ def booking_add():
     new_booking = Booking(member, lesson)
     return render_template('/bookings/new.html', title='Booking Added', result=booking_repository.save(new_booking))
 
+# @bookings_blueprint.route("/bookings/<id>", methods=['GET'])
+# def bookings_show(id):
+
+# @bookings_blueprint.route("/bookings/<id>/edit", methods=['GET'])
+# def bookings_edit(id):
+
+#     @bookings_blueprint.route("/bookings/<id>", methods=['POST'])
+# def bookings_update(id):
+
 
 # @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
 # def delete_booking(id):
