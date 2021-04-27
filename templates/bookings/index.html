@@ -28,6 +28,12 @@
     <td>{{booking.lesson.time}}</td>
     <td></td>
     <td>{{booking.lesson.duration}} minutes</td>
+    <td></td>
+    <td>
+      <form action="/bookings/{{booking.id}}/delete" method='POST'> 
+        <input type="submit" value="delete">
+      </form>
+    </td>
   </tr>
   {% endfor %}
 </table>
