@@ -73,4 +73,4 @@ def members_in(lesson):
 #     lesson = lesson_repository.select(id)
 #     vacancy = lesson.capacity - len(members_in(lesson))
 
-#     return len.vacancy
+#     return vacancy
