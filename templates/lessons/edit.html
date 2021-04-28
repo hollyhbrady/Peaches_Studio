@@ -2,28 +2,31 @@
 
 {% block content %}
 
-<h3>Edit Lesson: {{lesson.name}}, {{lesson.category}} level, on {{lesson.day}} at {{lesson.time}}</h3>
+<h3>Edit Lesson: &nbsp {{lesson.name}}, {{lesson.category}} level, on {{lesson.day}} at {{lesson.time}}</h3>
 
 <form class=form action="/lessons/{{lesson.id}}" method="POST">
     <div class="flex-container">
         <div class="grid-item1">
-            <label for="name">Name</label>
+            <label for="name">Name</label> &nbsp
             <input type="text" name="name" value="{{lesson.name}}" required>
         </div>
+        <br>
         <div class="grid-item2">
-            <label for="capacity">Capacity</label>
+            <label for="capacity">Capacity</label> &nbsp
             <input type="number" name="capacity" min="0" max="30" value="{{lesson.capacity}}" required>
         </div>
+        <br>
         <div class="grid-item3">
-            <label for="category">Category</label>  
+            <label for="category">Category</label> &nbsp
             <select name="category">
                 <option value="Beginner">Beginner</option>
                 <option value="Intermediate">Intermediate</option>
                 <option value="Advanced">Advanced</option>
             </select>
         </div>
+        <br>
         <div class="grid-item4">
-            <label for="day">Day</label>
+            <label for="day">Day</label> &nbsp
             <select name="day" value="{{lesson.day}}" required>
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
@@ -34,14 +37,17 @@
                 <option value="Sunday">Sunday</option>
             </select>
         </div>
+        <br>
         <div class="grid-item5">
-            <label for="name">Time</label>
+            <label for="name">Time</label> &nbsp
             <input type="time" name="time" min="06:00" max="20:00" value="{{lesson.time}}" required>
         </div>
+        <br>
         <div class="grid-item6">
-            <label for="duration">Duration</label>
+            <label for="duration">Duration</label> &nbsp
             <input type="number" name="duration" min="0" max="120" value="{{lesson.duration}}" required>
         </div>
+        <br>
         <div class="grid-item7">
             <input class="button" type="submit" value="Edit Lesson">
         </div>
