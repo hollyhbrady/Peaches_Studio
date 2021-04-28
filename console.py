@@ -166,11 +166,15 @@ booking37 = Booking(member14, lesson3)
 booking_repository.save(booking37)
 booking41 = Booking(member14, lesson13)
 booking_repository.save(booking41)
+booking43 = Booking(member14, lesson6)
+booking_repository.save(booking43)
 
 member15 = Member('Nick Bierne', 'Standard')
 member_repository.save(member15)
 booking42 = Booking(member15, lesson13)
 booking_repository.save(booking42)
+booking44 = Booking(member15, lesson6)
+booking_repository.save(booking44)
 
 
 

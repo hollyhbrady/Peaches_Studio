@@ -20,7 +20,7 @@ def save(booking):
     for schedule_member in schedule:
         if booking.member.membership == "Standard":
             if len(schedule) >= 3:
-                return f"Standard members can attend a maximum of 3 classes a week. Offer {booking.member.name} an upgrade to Deluxe for unlimited classes."
+                return f"Cannot book another class for {booking.member.name}. Standard members can attend a maximum of 3 classes a week. Offer {booking.member.name} an upgrade to Deluxe for unlimited classes."
     sql = "INSERT INTO bookings (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
     values = [booking.member.id, booking.lesson.id]
     results = run_sql(sql, values)
