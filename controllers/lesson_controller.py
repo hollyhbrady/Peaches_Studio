@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.lesson import Lesson
 import repositories.lesson_repository as lesson_repository
+import repositories.booking_repository as booking_repository
 
 lessons_blueprint = Blueprint("lessons", __name__)
 
@@ -29,7 +30,8 @@ def lessons_add():
 def show_lesson(id):
     lesson = lesson_repository.select(id)
     members = lesson_repository.members_in(lesson)
-    return render_template('lessons/show.html', lesson = lesson, members = members)
+    vacancy = booking_repository.show_capacity(id)
+    return render_template('lessons/show.html', lesson = lesson, members = members, vacancy = vacancy)
 
 @lessons_blueprint.route("/lessons/<id>/edit", methods=['GET'])
 def lessons_edit(id):

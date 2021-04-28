@@ -8,6 +8,29 @@ import repositories.member_repository as member_repository
 import repositories.lesson_repository as lesson_repository
 
 def save(booking):
+    lesson = lesson_repository.select(booking.lesson.id)
+    # find capacity of this lesson
+    capacity = booking.lesson.capacity
+    # find how many people are booked on this lesson
+    booked = lesson_repository.members_in(booking.lesson)
+    # if statement: 
+    # if booked < capacity:
+    #   if people booked is less than capacity
+    #   add to lesson
+    #   else
+    #   return string
+    
+    # if statement: 
+    # if people booked is more than or equal to capacity
+    
+    if len(booked) >= capacity:
+    #   return fail string
+        return "This lesson is already full"
+    for booked_member in booked:
+        if booked_member.id == booking.member.id:
+    # if booking.member.name in booked:
+            return "Member already booked for this class"
+    
     sql = "INSERT INTO bookings (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
     values = [booking.member.id, booking.lesson.id]
     results = run_sql(sql, values)
@@ -49,9 +72,43 @@ def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
 
-
+# Not currently using
 def update(booking):
     sql = "UPDATE bookings SET (member_id, lesson_id) = (%s, %s) WHERE id = %s"
     values = [booking.member.id, booking.lesson.id, lesson.id]
     run_sql(sql, values)
+
+# def check_capacity(lesson_id):
+#     # find lesson by id
+#     lesson = lesson_repository.select(id)
+#     # find capacity of this lesson
+#     capacity = lesson.capacity
+#     # find how many people are booked on this lesson
+#     booked = lesson_repository.members_in(id)
+#     # if statement: 
+#     # if booked < capacity:
+#     #   if people booked is less than capacity
+#     #   add to lesson
+#     #   else
+#     #   return string
+    
+#     # if statement: 
+#     # if people booked is more than or equal tocapacity
+#         if len(booked) >= capacity:
+#     #   return fail string
+#             return "This lesson is already full"
+#     #   else
+#     #   continue? to save(booking)
+
+    
+def show_capacity(id):
+    # find lesson by id
+    lesson = lesson_repository.select(id)
+    # find capacity of this lesson
+    capacity = lesson.capacity
+    # find how many people are booked on this lesson
+    booked = lesson_repository.members_in(lesson)
+    vacancy = capacity - len(booked)
+    return vacancy
+ 
 

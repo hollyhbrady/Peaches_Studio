@@ -63,14 +63,7 @@ def members_in(lesson):
     results = run_sql(sql, values)
 
     for row in results:
-        member = Member(row['name'], row['membership'])
+        member = Member(row['name'], row['membership'], row['id'])
         members.append(member)
     return members
 
-# def lesson_vacancy(id):
-#     vacancy = []
-
-#     lesson = lesson_repository.select(id)
-#     vacancy = lesson.capacity - len(members_in(lesson))
-
-#     return vacancy
