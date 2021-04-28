@@ -19,6 +19,7 @@ def booking_form():
     lessons = lesson_repository.select_all()
     return render_template("/bookings/new.html", title="Add Booking", members = members, lessons = lessons)
 
+# Add capacity check to here?
 @bookings_blueprint.route("/bookings/new", methods=['POST'])
 def booking_add():
     member_id = request.form['member_id']
@@ -28,6 +29,7 @@ def booking_add():
     new_booking = Booking(member, lesson)
     return render_template('/bookings/new.html', title='Booking Added', result=booking_repository.save(new_booking))
 
+# Not currently using this - potential extension
 @bookings_blueprint.route("/bookings/<id>", methods=['GET'])
 def bookings_show(id):
     booking = booking_repository.select(id)
