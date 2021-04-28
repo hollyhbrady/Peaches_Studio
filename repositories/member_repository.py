@@ -65,3 +65,5 @@ def lessons(member):
         lessons.append(lesson)
     return lessons
     # f"{lesson.name} on {lessons.day} at {lessons.time}"
+
+# def membership(id):

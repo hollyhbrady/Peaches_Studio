@@ -13,24 +13,27 @@ def save(booking):
     capacity = booking.lesson.capacity
     # find how many people are booked on this lesson
     booked = lesson_repository.members_in(booking.lesson)
+    schedule = member_repository.lessons(booking.member)
     # if statement: 
     # if booked < capacity:
     #   if people booked is less than capacity
     #   add to lesson
     #   else
     #   return string
-    
     # if statement: 
     # if people booked is more than or equal to capacity
-    
+
     if len(booked) >= capacity:
     #   return fail string
-        return "This lesson is already full"
+        return f"This lesson is already full, capacity of {booking.lesson.capacity} has been reached."
     for booked_member in booked:
         if booked_member.id == booking.member.id:
     # if booking.member.name in booked:
-            return "Member already booked for this class"
-    
+            return f"{booking.member.name} is already booked for this class."
+    for schedule_member in schedule:
+        if booking.member.membership == "Standard":
+            if len(schedule) >= 3:
+                return "Standard members can attend a maximum of 3 classes a week. Offer upgrade to Deluxe for unlimited classes."
     sql = "INSERT INTO bookings (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
     values = [booking.member.id, booking.lesson.id]
     results = run_sql(sql, values)
