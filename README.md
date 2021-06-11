@@ -19,10 +19,11 @@ Show all lessons a member is booked in for.
 Show capacity and remaining space for a selected lesson.
 Delete members, lessons and bookings.
 
-To Access
-Clone file
+To Access, first clone the repository and run the below commands.
+
 Terminal 1: 
 - flask run (open a window with http://127.0.0.1:5000/ if this has not happened automatically)
+
 Terminal 2:
 - psql -d peaches_studio -f db/peaches_studio.sql
 - python3 console.py
