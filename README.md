@@ -1,7 +1,9 @@
 Peaches_Studio
+
 Week 5 Solo Project using: HTML, CSS, Python, Flask, PostgreSQL and the psycopg library. Practising TDD, RESTful routes and CRUD database interactions.
 
 My Brief - Gym
+
 A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes.
 
 MVP
